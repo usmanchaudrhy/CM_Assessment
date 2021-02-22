@@ -1,0 +1,11 @@
+*Answers to Questions 5 to 6*
+
+Question 5
+A. select sp.name from salesperson sp join order o on sp.id = o.salespersonID join customer c on c.id = o.customerID where c.name = 'George'
+B. select sp.name from salesperson sp where sp.ID NOT IN(select o.salespersonID from order o join customer c on o.customerID = c.ID where c.name = 'George')
+C. select sp.name from salesperson sp join order o on sp.ID = o.salespersonID groupby o.salespersonID having COUNT (*)>=2
+
+Question 6
+A. select name from `salesperson` order by `salary` desc limit 1 offset 2
+B. 
+C. select Month(OrderDate) Month, Count(*) Count from Orders where Year(OrderDate) = 2020 groupby Month(OrderDate)
